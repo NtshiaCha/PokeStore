@@ -1,38 +1,137 @@
-.App {
-  text-align: center;
+html,
+body,
+#root,
+#app,
+#content {
+    height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#app {
+    display: flex;
+    flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#header-container {
+    display: flex;
+    flex-direction: row;
+    background: black;
+    color: white;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#header-container>nav {
+    flex-grow: 1;
 }
 
-.App-link {
-  color: #61dafb;
+nav>ol {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav li a {
+    display: block;
+    padding: 3px 8px;
+}
+
+nav li:hover {}
+
+#clicks-counter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    flex-grow: 0;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+nav li a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav li a:link {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav li a:hover {
+    text-decoration: none;
+    background: #444;
+}
+
+
+/* #region clicker */
+
+#clicker-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.purchase-button {
+    height: 5rem;
+    width: 8.5rem;
+    font-size: 1.5rem;
+    background: linear-gradient(0, green, greenyellow);
+    cursor: pointer;
+}
+
+.purchase-button:hover {
+    background: linear-gradient(0, #00AA00, greenyellow);
+}
+
+.purchase-button:active {
+    background: linear-gradient(0, greenyellow, green);
+}
+
+
+/* #endregion clicker */
+
+
+/* #region store */
+
+#store-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#store-container img {
+    max-width: 250px;
+}
+
+
+/* #endregion store */
+
+#pokemon-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 2rem;
+}
+
+.poke-box {
+    height: 200px;
+    width: 200px;
+    border: 2px grey ridge;
+}
+
+.poke-card {
+    margin: 1rem;
+}
+
+.poke-box.unknown {
+    background-color: #AAA;
+    content: '?'
+}
+
+.poke-tag {
+    display: block;
+    text-align: center;
 }
